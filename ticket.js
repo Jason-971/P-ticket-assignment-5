@@ -1,6 +1,6 @@
-
 const buttons = document.querySelectorAll('.seat-btn');
 let selectedCount = 0;
+let totalPrice = 0; 
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function () {
@@ -9,24 +9,24 @@ for (let i = 0; i < buttons.length; i++) {
             this.classList.add('selected');
             selectedCount++;
 
-            const seatNumber = this.innerText;
-            const seatClass = 'Economy';
             const seatPrice = 550;
+            totalPrice += seatPrice; 
 
-            addTableRow(seatNumber, seatClass, seatPrice);
-
+            addTableRow(this.innerText, 'Economy', seatPrice);
         } else if (this.classList.contains('selected')) {
-            this.style.backgroundColor = ''; // Reset background color
+            this.style.backgroundColor = ''; 
             this.classList.remove('selected');
             selectedCount--;
 
+            totalPrice -= 550; 
             removeTableRow(this.innerText);
         } else {
             alert('You can only book four seats');
         }
+
+        updateTotalPrice(); 
     });
 }
-
 
 function addTableRow(seat, seatClass, seatPrice) {
     const tableBody = document.getElementById('selection').getElementsByTagName('tbody')[0];
@@ -39,8 +39,13 @@ function addTableRow(seat, seatClass, seatPrice) {
     cell3.textContent = seatPrice;
 }
 
+function updateTotalPrice() {
+    const totalElement = document.getElementById('total-price');
+    totalElement.textContent = totalPrice;
+}
 
 let seatNumber = 40;
+
 function scrollToSection() {
     const section = document.getElementById('scrollSection');
     section.scrollIntoView({ behavior: 'smooth' });
@@ -55,7 +60,4 @@ function incrementSeat() {
         seatNumber = seatNumber - 1;
         seatReduce.textContent = seatNumber;
     }
-
 }
-
-
