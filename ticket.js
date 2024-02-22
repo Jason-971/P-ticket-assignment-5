@@ -61,3 +61,23 @@ function incrementSeat() {
         seatReduce.textContent = seatNumber;
     }
 }
+
+function applyDiscount() {
+    const couponCode = document.getElementById('couponCode').value;
+    if (couponCode === 'NEW15' || couponCode === 'Couple20') {
+        let discount = 0;
+        if (couponCode === 'NEW15') {
+            discount = 15;
+        } else if (couponCode === 'Couple20') {
+            discount = 20;
+        }
+        const discountedPrice = totalPrice - (totalPrice * discount / 100);
+        updateGrandTotal(discountedPrice);
+    } else {
+        alert('Invalid coupon code!');
+    }
+}
+
+function updateGrandTotal(newTotal) {
+    document.getElementById('grandTotal').innerText = newTotal;
+}
