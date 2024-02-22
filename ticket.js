@@ -86,7 +86,7 @@ function applyDiscount() {
     const nextB = document.getElementById('nextButton');
     phoneNum.addEventListener('input', function(){
         const phoneNumber = phoneNum.value;
-        if (!isNaN(phoneNumber) && phoneNumber.length === 11){
+        if (!isNaN(phoneNumber) && phoneNumber.length === 11 && selectedCount>= 1){
             nextB.disabled = false;
         } else {
             nextB.disabled = true;
