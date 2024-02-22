@@ -61,6 +61,9 @@ function incrementSeat() {
         seatReduce.textContent = seatNumber;
     }
 }
+function updateGrandTotal(newTotal) {
+    document.getElementById('grandTotal').innerText = newTotal;
+}
 
 function applyDiscount() {
     const couponCode = document.getElementById('couponCode').value;
@@ -76,8 +79,20 @@ function applyDiscount() {
     } else {
         alert('Invalid coupon code!');
     }
-}
+};
 
-function updateGrandTotal(newTotal) {
-    document.getElementById('grandTotal').innerText = newTotal;
-}
+
+    const phoneNum = document.getElementById('phoneNumber');
+    const nextB = document.getElementById('nextButton');
+    phoneNum.addEventListener('input', function(){
+        const phoneNumber = phoneNum.value;
+        if (!isNaN(phoneNumber) && phoneNumber.length === 11){
+            nextB.disabled = false;
+        } else {
+            nextB.disabled = true;
+        }  
+    });
+    
+
+
+  

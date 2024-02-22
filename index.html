@@ -235,12 +235,13 @@
                         <hr style="border-top: dotted 3px;">
                         <div class="flex justify-between px-4">
                             <h3 class="text-sm font-bold">Total Price</h3>
-                            <h3  class="text-sm font-bold mr-3">BDT <span id="total-price"></span></h3>
+                            <h3 class="text-sm font-bold mr-3">BDT <span id="total-price"></span></h3>
                         </div>
                         <div>
                             <label class="input flex items-center gap-2 h-[56px] w-[370px] ml-3">
-                                <input type="text" id="couponCode"  placeholder="Have Any Coupon?" />
-                                <button onclick="applyDiscount()" id="discount" class="btn w-[100px] bg-[#1DD100] text-white">Apply</button>
+                                <input type="text" id="couponCode" placeholder="Have Any Coupon?" />
+                                <button onclick="applyDiscount()" id="discount"
+                                    class="btn w-[100px] bg-[#1DD100] text-white">Apply</button>
                             </label>
                         </div>
                         <div class="flex justify-between px-4 mb-4">
@@ -251,7 +252,7 @@
                     <div>
                         <label class="form-control w-full ">
                             <div class="label">
-                                <span class="label-text text-lg font-bold">Passenger Name*</span>
+                                <span class="label-text text-lg font-bold">Passenger Name</span>
                             </div>
                             <input type="text" placeholder="Enter Your Name" class="input input-bordered w-[400px]">
                         </label>
@@ -259,9 +260,9 @@
                     <div>
                         <label class="form-control w-full max-w-xs">
                             <div class="label">
-                                <span class="label-text text-lg font-bold">Phone Name*</span>
+                                <span class="label-text text-lg font-bold">Phone Number</span>
                             </div>
-                            <input type="text" placeholder="Enter Your Number" class="input input-bordered w-[400px]">
+                            <input id="phoneNumber" type="text" placeholder="Enter Your Number" class="input input-bordered w-[400px]">
                         </label>
                     </div>
                     <div>
@@ -269,13 +270,13 @@
                             <div class="label">
                                 <span class="label-text text-lg font-bold">Email ID</span>
                             </div>
-                            <input type="text" placeholder="Enter Your Email ID"
-                                class="input input-bordered w-[400px]" />
+                            <input type="text" placeholder="Enter Your Email ID" class="input input-bordered w-[400px]" />
                         </label>
                     </div>
                     <div class="mt-8">
-                        <button class="btn w-full bg-[#1DD100] text-white ">Next</button>
+                        <button id="nextButton" class="btn w-full bg-[#1DD100] text-white " disabled>Next</button>
                     </div>
+
                     <div class="flex justify-around">
                         <h4 class="text-sm">Terms and Conditions</h4>
                         <h4 class="text-sm">Cancellation Policy</h4>
